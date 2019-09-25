@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/simon-game/static/css/main.b100e6da.chunk.css",
-    "main.js": "/simon-game/static/js/main.0d48328f.chunk.js",
-    "main.js.map": "/simon-game/static/js/main.0d48328f.chunk.js.map",
+    "main.css": "/simon-game/static/css/main.80af01ed.chunk.css",
+    "main.js": "/simon-game/static/js/main.0c4061bb.chunk.js",
+    "main.js.map": "/simon-game/static/js/main.0c4061bb.chunk.js.map",
     "runtime-main.js": "/simon-game/static/js/runtime-main.0535ac3e.js",
     "runtime-main.js.map": "/simon-game/static/js/runtime-main.0535ac3e.js.map",
-    "static/js/2.5293b168.chunk.js": "/simon-game/static/js/2.5293b168.chunk.js",
-    "static/js/2.5293b168.chunk.js.map": "/simon-game/static/js/2.5293b168.chunk.js.map",
+    "static/js/2.83d88b46.chunk.js": "/simon-game/static/js/2.83d88b46.chunk.js",
+    "static/js/2.83d88b46.chunk.js.map": "/simon-game/static/js/2.83d88b46.chunk.js.map",
     "index.html": "/simon-game/index.html",
-    "precache-manifest.a67104e930152968275e479053849c23.js": "/simon-game/precache-manifest.a67104e930152968275e479053849c23.js",
+    "precache-manifest.6751214b9601ece54156bdd58e1074d7.js": "/simon-game/precache-manifest.6751214b9601ece54156bdd58e1074d7.js",
     "service-worker.js": "/simon-game/service-worker.js",
-    "static/css/main.b100e6da.chunk.css.map": "/simon-game/static/css/main.b100e6da.chunk.css.map",
-    "static/media/logo.svg": "/simon-game/static/media/logo.25bf045c.svg"
+    "static/css/main.80af01ed.chunk.css.map": "/simon-game/static/css/main.80af01ed.chunk.css.map"
   }
 }
