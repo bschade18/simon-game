@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/simon-game/precache-manifest.9d9553f108d590320d0fbc9eb98666ee.js"
+  "/simon-game/precache-manifest.f80612b6732d26e2a7e4702b4365dd70.js"
 );
 
 self.addEventListener('message', (event) => {
