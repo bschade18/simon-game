@@ -32,13 +32,11 @@ class App extends React.Component {
   playRandom = () => {
     let board = this.state.gameBoard;
     let colorBoard = ['g', 'r', 'b', 'y'];
-    let randomIndex = Math.floor(Math.random() * 4);
-    let randomButton = colorBoard[randomIndex];
+    let randomColor = colorBoard[Math.floor(Math.random() * 4)];
 
     this.setState({
-      gameBoard: [...board, randomButton],
+      gameBoard: [...board, randomColor],
     });
-    console.log(this.state.gameBoard);
     this.playBoard();
   };
 
@@ -99,13 +97,11 @@ class App extends React.Component {
   };
 
   checkBoard = () => {
-    let gameBoard = this.state.gameBoard;
-    let state = this.state;
-    let playerBoard = this.state.playerBoard;
+    const { gameBoard, playerBoard, strict } = this.state;
     playerBoard.forEach(
       function (color, index) {
         if (color !== gameBoard[index]) {
-          if (state.strict) {
+          if (strict) {
             alert('wrong color!');
             this.restartGame();
             return;
