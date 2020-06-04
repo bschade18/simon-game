@@ -1,25 +1,21 @@
-import React from "react";
+import React from 'react';
 
-class GameDisplay extends React.Component {
-  render() {
-    return (
-      <div className="display-container">
-        <div className="countDisplay">
-          {this.props.turnCount < 1 ? "--" : this.props.turnCount}
-        </div>
-        <div className="start-button" onClick={this.props.restartGame}>
-          Start
-        </div>
-        <div
-          id="strict"
-          className="strict-button"
-          onClick={this.props.enableStrict}
-        >
-          Strict
-        </div>
+const GameDisplay = ({ turnCount, restartGame, toggleStrict, strict }) => {
+  return (
+    <div className="display-container">
+      <div className="countDisplay">{turnCount < 1 ? '--' : turnCount}</div>
+      <div className="start-button" onClick={() => restartGame()}>
+        Start
       </div>
-    );
-  }
-}
+      <div
+        id="strict"
+        className={'strict-button ' + (strict && 'strictmode')}
+        onClick={toggleStrict}
+      >
+        Strict
+      </div>
+    </div>
+  );
+};
 
 export default GameDisplay;
