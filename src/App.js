@@ -30,33 +30,22 @@ class App extends React.Component {
   };
 
   playRandom = () => {
-    let board = this.state.gameBoard;
     let colorBoard = ['g', 'r', 'b', 'y'];
     let randomColor = colorBoard[Math.floor(Math.random() * 4)];
 
     this.setState({
-      gameBoard: [...board, randomColor],
+      gameBoard: [...this.state.gameBoard, randomColor],
     });
     this.playBoard();
   };
 
   playBoard = () => {
     (function run(i, x, gameBoard, playSound) {
+      let colors = ['g', 'r', 'b', 'y'];
       setTimeout(function () {
         let color = gameBoard[x];
-        if (color === 'g') {
-          document.getElementById('g').classList.add('g-light');
-          playSound(1);
-        } else if (color === 'r') {
-          document.getElementById('r').classList.add('r-light');
-          playSound(2);
-        } else if (color === 'b') {
-          document.getElementById('b').classList.add('b-light');
-          playSound(3);
-        } else if (color === 'y') {
-          document.getElementById('y').classList.add('y-light');
-          playSound(4);
-        }
+        document.getElementById(color).classList.add(`${color}-light`);
+        playSound(colors.indexOf(color) + 1);
         ++x;
         setTimeout(() => {
           let color = gameBoard[x - 1];
@@ -73,21 +62,14 @@ class App extends React.Component {
 
   playerTurn = (e) => {
     let color = e.target.id;
+    let colors = ['g', 'r', 'b', 'y'];
     document.getElementById(color).classList.add(`${color}-light`);
 
     setTimeout(() => {
       document.getElementById(color).classList.remove(`${color}-light`);
     }, 500);
 
-    if (color === 'g') {
-      this.playSound(1);
-    } else if (color === 'r') {
-      this.playSound(2);
-    } else if (color === 'b') {
-      this.playSound(3);
-    } else if (color === 'y') {
-      this.playSound(4);
-    }
+    this.playSound(colors.indexOf(color) + 1);
 
     this.setState({
       playerBoard: [...this.state.playerBoard, e.target.id],
@@ -97,7 +79,8 @@ class App extends React.Component {
   };
 
   checkBoard = () => {
-    const { gameBoard, playerBoard, strict } = this.state;
+    let { gameBoard, playerBoard, strict } = this.state;
+
     playerBoard.forEach(
       function (color, index) {
         if (color !== gameBoard[index]) {
@@ -107,6 +90,7 @@ class App extends React.Component {
             return;
           }
           alert('wrong color!');
+          console.log('correct');
           this.setState({
             playerBoard: [],
           });
@@ -121,6 +105,10 @@ class App extends React.Component {
     } else if (playerBoard.length === 20) {
       alert('you won the game!');
       this.restartGame();
+    } else if (
+      playerBoard[playerBoard.length - 1] !== gameBoard[gameBoard.length - 1]
+    ) {
+      return;
     } else {
       this.setState({
         playerBoard: [],

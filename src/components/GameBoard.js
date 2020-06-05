@@ -1,12 +1,19 @@
 import React from 'react';
 
 const GameBoard = ({ playerTurn }) => {
+  const renderButton = (letter, color) => (
+    <div
+      id={letter}
+      className={'gameButton ' + color}
+      onClick={playerTurn}
+    ></div>
+  );
   return (
     <div className="colors-circle">
-      <div id="g" className="gameButton green" onClick={playerTurn}></div>
-      <div id="r" className="gameButton red" onClick={playerTurn}></div>
-      <div id="b" className="gameButton blue" onClick={playerTurn}></div>
-      <div id="y" className="gameButton yellow" onClick={playerTurn}></div>
+      {renderButton('g', 'green')}
+      {renderButton('r', 'red')}
+      {renderButton('b', 'blue')}
+      {renderButton('y', 'yellow')}
     </div>
   );
 };
